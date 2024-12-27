@@ -8,8 +8,7 @@ function App() {
     const [email, setEmail] = useState("");
 
     const submitForm = () => {
-        // Validation
-        //
+        console.log("Email: ", email);
     };
 
     return (
