@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Button } from "./components/ui/button";
 import { Label } from "./components/ui/label";
 import { Input } from "./components/ui/input";
+import { useToast } from "./hooks/use-toast";
 
 function App() {
+    const { toast } = useToast();
+
+    useEffect(() => {
+        document.title = "Demo Queue Up";
+    }, []);
+
     const [email, setEmail] = useState("");
 
     const submitForm = () => {
         console.log("Email: ", email);
+
+        toast({
+            title: `email: ${email}`,
+        });
     };
 
     return (
